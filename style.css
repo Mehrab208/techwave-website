@@ -22,6 +22,9 @@ a {
 li {
   list-style: none;
 }
+button {
+  cursor: pointer;
+}
 /* nav bar design */
 .hamburger {
   display: none;
@@ -113,8 +116,58 @@ li {
   position: absolute;
 }
 .circle-image button {
+  position: relative;
+  padding: 8px 16px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a0b2e;
+  background: #00ff88;
+  border-radius: 1000px;
+  border: none;
+  z-index: 1;
+}
+.circle-image button::before {
+  content: "";
   position: absolute;
-  transform: translate(-50%, 50%);
+  inset: -2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094
+  );
+  background-size: 300% 300%;
+  animation: borderanimation 6s linear infinite;
+
+  z-index: -1;
+}
+.circle-image button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: #00ff88;
+  z-index: -1;
+}
+@keyframes borderanimation borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.circle-image button {
+  position: absolute;
+  transform: translate(165%, -415%);
 }
 .banner-article {
   display: flex;
@@ -133,6 +186,11 @@ li {
   font-size: 1rem;
   margin-top: 8px;
   margin-bottom: 24px;
+  text-align: center;
+}
+.banner-btn {
+  display: flex;
+  gap: 8px;
 }
 .banner-btn button {
   padding: 12.5px 20px;
@@ -143,6 +201,55 @@ li {
 }
 .spotify {
   background: linear-gradient(90deg, #f7e93f 0%, #fb09b4 51%, #9100f8 100%);
+  color: #ffffff;
+  border: none;
+}
+.subscribe-btn {
+  /* background: none; */
+  color: #00ff88;
+  /* border: 02px solid #00ff88; */
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 1;
+}
+.subscribe-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    45deg,
+    #00ff99,
+    #00e0ff,
+    #9b00ff,
+    #ff00c8,
+    #00ff99
+  );
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+
+  z-index: -1;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  padding: 2px;
+}
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.subscribe-btn::before {
+  filter: blur(3px);
 }
 /* responsive design */
 @media screen and (max-width: 576px) {
@@ -157,5 +264,11 @@ li {
   }
   .nav-container {
     padding: 20px;
+  }
+  .banner-container {
+    height: 100%;
+  }
+  .banner-article {
+    transform: translate(0, 75%);
   }
 }
