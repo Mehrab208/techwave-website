@@ -308,6 +308,7 @@ button {
   max-width: 1600px;
   margin: 0 auto;
   padding-top: 120px;
+  background-color: #230e3d;
 }
 .grid-container > h2 {
   text-align: center;
@@ -395,7 +396,63 @@ button {
   grid-row: 3;
   gap: 16px;
 }
-
+/* Featured Episodes Section Design */
+.episode-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+.episode-container h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+.video-card {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 30px;
+}
+.video {
+  background-color: #250d44;
+  width: 380px;
+  border-radius: 16px;
+  height: 440px;
+  padding: 20px 5px;
+}
+.iframe {
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 5px;
+}
+.video-contant {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+}
+.video-contant h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+.video-contant > p {
+  line-height: 24px;
+  color: #ffffff;
+  opacity: 60%;
+}
+.duration p {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  color: #00ff88;
+}
 /* responsive design */
 @media screen and (max-width: 576px) {
   .menu {
@@ -437,5 +494,9 @@ button {
     display: flex;
     flex-direction: column;
     padding: 30px;
+  }
+  .video-card {
+    flex-direction: column;
+    gap: 15px;
   }
 }
