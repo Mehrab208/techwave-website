@@ -154,10 +154,11 @@ button {
   background: #00ff88;
   z-index: -1;
 }
-@keyframes borderanimation borderMove {
+@keyframes borderanimation {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -251,6 +252,7 @@ button {
 .subscribe-btn::before {
   filter: blur(3px);
 }
+
 /* responsive design */
 @media screen and (max-width: 576px) {
   .menu {
