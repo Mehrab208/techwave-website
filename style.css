@@ -5,6 +5,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* From Uiverse.io by SupportHotline */
+button {
+  /* ... basic styles ... */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+button:hover {
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px); /* Lifts slightly */
+}
 
 body {
   font-family: "Inter", sans-serif;
@@ -229,12 +243,15 @@ button {
   animation: borderMove 6s linear infinite;
 
   z-index: -1;
+
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
   mask-composite: exclude;
   padding: 2px;
 }
+
 @keyframes borderMove {
   0% {
     background-position: 0% 50%;
@@ -501,6 +518,46 @@ button {
   height: 40px;
   border: 2px solid #533c72;
 }
+
+/* footer section design */
+
+.footer-container {
+  max-width: 1600px;
+  height: 412px;
+  margin: 0 auto;
+  background-image: url(./assets/footer-bg.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  gap: 32px;
+}
+.footer-logo img {
+  max-width: 100%;
+}
+.footer-btn {
+  display: flex;
+  gap: 40px;
+}
+.footer-btn > button {
+  background: transparent;
+  display: inline-flex;
+  color: #ffffff;
+  border: none;
+  gap: 8px;
+  align-items: center;
+  opacity: 60%;
+  font-weight: 600;
+}
+.copyright p {
+  opacity: 60%;
+  line-height: 24px;
+  font-size: 1rem;
+  color: #ffffff;
+}
 /* responsive design */
 
 @media screen and (max-width: 576px) {
@@ -519,6 +576,13 @@ button {
   .circle-image {
     transform: translate(0, 15%);
   }
+  .grid-container {
+    padding-top: 60px;
+  }
+  .grid-container > h2 {
+    padding: 0 10px;
+    font-size: 2.5rem;
+  }
   .banner-container {
     height: 560px;
   }
@@ -528,11 +592,17 @@ button {
   .about-container {
     margin-top: 150px;
   }
+  .about-article {
+    padding: 20px;
+  }
   .about-rating {
     flex-wrap: wrap;
     padding: 20px;
+    margin-bottom: 60px;
   }
-
+  .episode-container {
+    padding-top: 60px;
+  }
   .about-rating {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -551,5 +621,30 @@ button {
   .host-flex {
     flex-direction: column;
     text-align: center;
+  }
+  .host-container h2 {
+    margin-top: 60px;
+  }
+  .host-container {
+    padding-bottom: 50px;
+  }
+  .footer-logo img {
+    width: 219px;
+  }
+  .footer-container {
+    background-size: 180% auto;
+    background-position: center top;
+    height: 180px;
+    gap: 16px;
+  }
+  .footer-btn {
+    flex-wrap: wrap;
+    width: 265px;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+  }
+  .copyright p {
+    font-size: 0.5rem;
   }
 }
